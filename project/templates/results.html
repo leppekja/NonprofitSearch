@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> {{ title }} </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <img src="{{url_for('static', filename='templogo.png')}}" alt="Logo" class="center">
+        <h3> Welcome, {{ user.username }} </h3>
+        <br>
+        <br>    
+        <p><h2>We've found it.</h2><br>
+        <h2>    {{name}}  is in {{ city }}.  </h2>
+        <br>
+        <br>
+        <h4>
+            Exemption ID: {{ ein }} <br>
+            Zip Code: {{ zip_code }} <br>
+            City: {{ city }} <br>
+            State: {{ state }} <br>
+            Website: {{ website }} <br>
+            Mission Statement: {{ mission }} <br>
+            Population: {{ population }} (Percentile: {{ percentages[0][0] }}) <br>
+            Median Income: {{ med_income }} (Percentile: {{ percentages[1][0] }}) <br>
+            Mean Age: {{ mean_age }} (Percentile: {{ percentages[2][0] }}) <br>
+            % of Households with Children: {{ kids }}  (Percentile: {{ percentages[3][0] }}) <br>
+            There are {{ np }} other nonprofits in this area (either zip or state) <br>
+        </h4>
+        <br>
+        <h4>
+            The following graphs show the distribution of several variables by {{ loc_type }}, with the {{ loc_type }} of the selected nonprofit highlighted in dark blue.
+        </h4>
+        <img src="{{url_for('static', filename='graphs.png')}}" style="width:750px;height:750px;" alt="graphs" class="center"></p>
+        <br>
+        <br>
+        <br>
+        <h4> {{ other_names }} </h4>
+        <br>
+        {% for nonprofit in other_nonprofits %}
+        <li><a href= "{{ '/ein/' ~ nonprofit.EIN }}" >{{ ", ".join([nonprofit.org_name, nonprofit.state]) }}</a></li>
+        {% endfor %}
+    </body>
+</html>

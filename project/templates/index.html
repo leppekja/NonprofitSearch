@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> {{ title }} </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <img src="{{url_for('static', filename='templogo.png')}}" alt="Logo" class "center">
+        <br>
+        <br>  
+        <br>
+        <br>  
+        <h2>Welcome to GrantDev</h2><br>
+        <div class="home">
+            <h4>data aggregation and analysis for grant makers and nonprofits</h4>
+        </div>
+        <h4>Let your grantees focus on serving others:
+        <br>   
+        <br>
+        simplify grant applications<br>
+        identify community needs<br></h4>
+        <h2>Try it! Enter the name of a nonprofit</h2>
+            <form action="/results" method="POST">
+                <input type="text" name="nonprofit">
+                <input type="submit" value="Find!">
+            </form>
+<!--             <button form="search" formmethod="post" type="submit" value="Find!"></button>
+ -->    
+<!--         <form action="/thanks" method="POST">
+        <h2>Share your email with us to receive updates.</h2><br>
+        <p>
+			<input type="text" name="email" id="input_email">
+			<br>
+			<button type="submit" value="Find!"><br>
+		</p>
+		</form> -->
+
+    </body>
+</html>
