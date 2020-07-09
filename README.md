@@ -1,7 +1,7 @@
 # NonprofitSearch
 
 A proof of concept nonprofit database builder and search engine to integrate community data with nonprofit profiles.
-Credit to Jacob Leppek and Rob Mitchell. 
+Credit to Jacob Leppek and Rob Mitchell. Built for CAPP Course @ UChicago.
 
 HOW TO RUN THE SOFTWARE
 
